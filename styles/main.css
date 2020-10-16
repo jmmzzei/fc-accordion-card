@@ -1,42 +1,99 @@
-@import "reset.css";
-@import "colors.css";
+@import 'reset.css';
+@import 'colors.css';
 
 .disable-select {
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-body{
-  padding:0;
-  margin: 0;
-}
-
-main{
+main {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
   background: linear-gradient(0deg, var(--softblue), var(--softviolet));
 }
 
-label > p{
+.card {
+  min-height: 600px;
+  width: 55%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 20px 4em #00000050;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container {
+  position: absolute;
+  left: -150px;
+  top: -100px;
+  width: 600px;
+  height: 800px;
+}
+
+.list-container {
+  margin-right: 10%;
+  /* position:absolute; */
+  /* right: 40px; */
+  /* top: 40px; */
+}
+
+.bg-img {
+  height: 100%;
+  position: relative;
+  background: no-repeat center/100%
+      url('../resources/images/illustration-woman-online-mobile.svg'),
+    no-repeat 100% -150px url('../resources/images/bg-pattern-desktop.svg');
+  position: relative;
+}
+
+.bg-box {
+  position: absolute;
+  top: 328px;
+  left: 58px;
+  right: 0;
+  width: 220px;
+  height: 220px;
+  background: no-repeat center/100%
+    url('../resources/images/illustration-box-desktop.svg');
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+label:hover {
+  color: var(--softred);
+  cursor: pointer;
+}
+
+.content {
+  display: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark-grayishblue);
+}
+
+label > p {
   color: var(--very-darkblue);
 }
 
-ul{
-  list-style: none;
-}
-
-li{
+li {
   border-bottom: 1px solid var(--light-grayishblue);
   padding: 15px 0;
-  min-width: 400px;
-  max-width: 400px;
+  width: 400px;
+  width: 400px;
 }
 
 .arrow {
@@ -44,27 +101,9 @@ li{
   transition: all 0.4s;
 }
 
-.bg-pattern{
-  height: 100%;
-  border: 1px solid red;
-  height: 500px; 
-  background: url('../resources/images/bg-pattern-desktop.svg') cover 100% 100% no-repeat ;
-}
-
-input[type="checkbox"]{
-  display: none;
-}
-
-label:hover{
-  color: var(--softred);
-  cursor: pointer;
-}
-
-.content{
-  display: none;
-  font-size: 12px;
-  line-height: 20px;
-  color: var(--dark-grayishblue);
+.faq {
+  padding-left: 40px;
+  font-size: 36px;
 }
 
 #toggle0:checked ~ .content {
@@ -114,14 +153,3 @@ label:hover{
 #toggle4:checked ~ label > p > img {
   transform: rotate(180deg);
 }
-
-.card{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 70%;
-  border-radius: 30px;
-  background: white;
-}
-
