@@ -1,6 +1,11 @@
 @import 'reset.css';
 @import 'colors.css';
 
+main {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
 .disable-select {
   user-select: none;
   -webkit-user-select: none;
@@ -15,11 +20,6 @@
   background: linear-gradient(0deg, var(--softblue), var(--softviolet));
   height: 100%;
   width: 100%;
-}
-
-main {
-  padding-top: 150px;
-  padding-bottom: 50px;
 }
 
 .card {
@@ -55,35 +55,16 @@ main {
 }
 
 .bg-img {
-  transition: 0.4s all ease;
   height: 200px;
   position: absolute;
   top: -115px;
   left: 0px;
   right: 0;
   background: no-repeat center/100%
-      url('../resources/images/illustration-woman-online-mobile.svg'),
-    no-repeat 20px 100px /90% /* no-repeat center/100% */ url('../resources/images/bg-pattern-mobile.svg');
+      url('../images/illustration-woman-online-mobile.svg'),
+    no-repeat 20px 100px /90% url('../images/bg-pattern-mobile.svg');
   animation: showimg 0.8s forwards;
-}
-
-input[type='radio'] {
-  display: none;
-}
-
-label:hover {
-  color: var(--softred);
-  cursor: pointer;
-}
-
-.content {
-  max-height: 0;
-  width: 90%;
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 20px;
-  color: var(--dark-grayishblue);
-  transition: all 0.4s;
+  transition: 0.4s all ease;
 }
 
 .title {
@@ -105,8 +86,17 @@ label:hover {
   position: absolute;
   right: 0;
   top: 0;
-  background: no-repeat center/100%
-    url('../resources/images/icon-arrow-down.svg');
+  background: no-repeat center/100% url('../images/icon-arrow-down.svg');
+  transition: all 0.4s;
+}
+
+.content {
+  max-height: 0;
+  width: 90%;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark-grayishblue);
   transition: all 0.4s;
 }
 
@@ -114,14 +104,18 @@ label > p {
   color: var(--very-darkblue);
 }
 
+input[type='radio'] {
+  display: none;
+}
+
+label:hover {
+  color: var(--softred);
+  cursor: pointer;
+}
+
 li {
   border-bottom: 1px solid var(--light-grayishblue);
   padding: 10px 0;
-}
-
-.arrow {
-  float: right;
-  margin: 10px;
 }
 
 .faq {
@@ -178,9 +172,10 @@ li {
     left: -100px;
     bottom: 0;
     background: no-repeat center/100%
-        url('../resources/images/illustration-woman-online-desktop.svg'),
-      no-repeat 100% -290px url('../resources/images/bg-pattern-desktop.svg');
+        url('../images/illustration-woman-online-desktop.svg'),
+      no-repeat 100% -290px url('../images/bg-pattern-desktop.svg');
   }
+
   .bg-img:hover {
     top: -5px;
   }
@@ -193,9 +188,10 @@ li {
     width: 195px;
     height: 195px;
     background: no-repeat center/100%
-      url('../resources/images/illustration-box-desktop.svg');
+      url('../images/illustration-box-desktop.svg');
     animation: showimg 0.8s forwards;
   }
+
   .bg-box:hover {
     top: 235px;
   }
@@ -237,14 +233,5 @@ input:checked ~ label .title:after {
   }
   100% {
     transform: translateX(0);
-  }
-}
-
-@keyframes showli {
-  0% {
-    transform: translate(40px);
-  }
-  100% {
-    transform: translate(0px);
   }
 }
