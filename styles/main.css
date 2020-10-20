@@ -13,33 +13,44 @@ main {
   height: 100vh;
   display: flex;
   align-items: center;
+  position: fixed;
   justify-content: center;
   background: linear-gradient(0deg, var(--softblue), var(--softviolet));
 }
 
 .card {
   min-height: 600px;
-  width: 55%;
-
   display: flex;
+  width: 80%;
   align-items: center;
   justify-content: flex-end;
-  flex-direction: row;
-
+  flex-direction: column;
   border-radius: 30px;
   background: white;
   box-shadow: 0 20px 4em #00000050;
-
   position: relative;
-  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.card:hover {
+  box-shadow: 0 20px 1em #00000250;
+}
+
+.bg-box {
+  position: absolute;
+  top: 240px;
+  left: -70px;
+  width: 175px;
+  height: 175px;
+  background: no-repeat center/100%
+    url('../resources/images/illustration-box-desktop.svg');
 }
 
 .img-container {
   position: absolute;
-  left: -150px;
-  top: -100px;
+  left: 0;
   width: 600px;
-  height: 800px;
+  height: 100%;
 }
 
 .list-container {
@@ -49,27 +60,26 @@ main {
   /* top: 40px; */
 }
 
-.bg-img {
+.img-cropper {
+  width: 500px;
   height: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+.bg-img {
+  height: 100%;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: -120px;
+  bottom: 0;
   background: no-repeat center/100%
       url('../resources/images/illustration-woman-online-mobile.svg'),
     no-repeat 100% -150px url('../resources/images/bg-pattern-desktop.svg');
-  position: relative;
 }
 
-.bg-box {
-  position: absolute;
-  top: 328px;
-  left: 58px;
-  right: 0;
-  width: 220px;
-  height: 220px;
-  background: no-repeat center/100%
-    url('../resources/images/illustration-box-desktop.svg');
-}
-
-input[type='checkbox'] {
+input[type='radio'] {
   display: none;
 }
 
@@ -79,9 +89,12 @@ label:hover {
 }
 
 .content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  background: white;
   font-size: 12px;
   line-height: 20px;
+  transition: all 0.4s;
   color: var(--dark-grayishblue);
 }
 
@@ -92,8 +105,7 @@ label > p {
 li {
   border-bottom: 1px solid var(--light-grayishblue);
   padding: 15px 0;
-  width: 400px;
-  width: 400px;
+  width: 80%;
 }
 
 .arrow {
@@ -106,50 +118,32 @@ li {
   font-size: 36px;
 }
 
-#toggle0:checked ~ .content {
-  display: block;
-}
-#toggle1:checked ~ .content {
-  display: block;
-}
-#toggle2:checked ~ .content {
-  display: block;
-}
-#toggle3:checked ~ .content {
-  display: block;
-}
-#toggle4:checked ~ .content {
-  display: block;
+@media (min-width: 1440px) {
+  .card {
+    flex-direction: row;
+    width: 55%;
+  }
+
+  .img-container {
+    position: static;
+    left: 0;
+    width: 600px;
+    height: 100%;
+  }
+
+  li {
+    width: 400px;
+  }
 }
 
-#toggle0:checked ~ label > p {
-  font-weight: 700;
+input:checked ~ .content {
+  max-height: 100vh;
 }
-#toggle1:checked ~ label > p {
-  font-weight: 700;
-}
-#toggle2:checked ~ label > p {
-  font-weight: 700;
-}
-#toggle3:checked ~ label > p {
-  font-weight: 700;
-}
-#toggle4:checked ~ label > p {
+
+input:checked ~ label > p {
   font-weight: 700;
 }
 
-#toggle0:checked ~ label > p > img {
-  transform: rotate(180deg);
-}
-#toggle1:checked ~ label > p > img {
-  transform: rotate(180deg);
-}
-#toggle2:checked ~ label > p > img {
-  transform: rotate(180deg);
-}
-#toggle3:checked ~ label > p > img {
-  transform: rotate(180deg);
-}
-#toggle4:checked ~ label > p > img {
+input:checked ~ label > p > img {
   transform: rotate(180deg);
 }
