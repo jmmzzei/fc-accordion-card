@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/main.css" type="text/css" media="all" />
+    <script src="index.js" charset="utf-8"></script>
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <main>
+      <div class="bg-gradient"></div>
+      <article class="card">
+        <div class="img-container">
+          <div class="img-cropper">
+            <div class="bg-img"></div>
+          </div>
+          <div class="bg-box"></div>
+        </div>
+        <div class="list-container">
+          <h1 class="faq">FAQ</h1>
+          <ul>
+            <li>
+              <div>
+                <input type="radio" id="toggle0" name="radio" />
+                <label for="toggle0">
+                  <p class="title disable-select">
+                    How many team members can I invite?
+                  </p>
+                </label>
+                <div class="content">
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <input type="radio" id="toggle1" name="radio" />
+                <label for="toggle1">
+                  <p class="title disable-select">
+                    What is the maximum file upload size?
+                  </p>
+                </label>
+                <div class="content">
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <input type="radio" id="toggle2" name="radio" />
+                <label for="toggle2">
+                  <p class="title disable-select">
+                    How do I reset my password?
+                  </p>
+                </label>
+                <div class="content">
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <input type="radio" id="toggle3" name="radio" />
+                <label for="toggle3">
+                  <p class="title disable-select">
+                    Can I cancel my subscription?
+                  </p>
+                </label>
+                <div class="content">
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <input type="radio" id="toggle4" name="radio" />
+                <label for="toggle4">
+                  <p class="title disable-select">
+                    Do you provide additional support?.
+                  </p>
+                </label>
+                <div class="content">
+                  Chat and email support is available 24/7.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

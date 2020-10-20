@@ -1,0 +1,237 @@
+@import 'reset.css';
+@import 'colors.css';
+
+main {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.disable-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.bg-gradient {
+  position: fixed;
+  top: 0;
+  background: linear-gradient(0deg, var(--softblue), var(--softviolet));
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  margin: 0 auto;
+  width: 85%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 20px 4em #00000050;
+  position: relative;
+  animation: fademove 1s forwards;
+  transition: all 0.4s;
+}
+
+.card:hover {
+  box-shadow: 0 20px 1em #00000250;
+}
+
+.list-container {
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.img-container {
+  height: 80px;
+  width: 220px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.bg-img {
+  height: 200px;
+  position: absolute;
+  top: -115px;
+  left: 0px;
+  right: 0;
+  background: no-repeat center/100%
+      url('../images/illustration-woman-online-mobile.svg'),
+    no-repeat 20px 100px /90% url('../images/bg-pattern-mobile.svg');
+  animation: showimg 0.8s forwards;
+  transition: 0.4s all ease;
+}
+
+.title {
+  font-size: 12px;
+  min-width: 260px;
+  position: relative;
+  transition: 0.4s all ease;
+  color: var(--very-darkblue);
+}
+
+.title:hover {
+  color: var(--softred);
+}
+
+.title:after {
+  content: '';
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: no-repeat center/100% url('../images/icon-arrow-down.svg');
+  transition: all 0.4s;
+}
+
+.content {
+  max-height: 0;
+  width: 90%;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark-grayishblue);
+  transition: all 0.4s;
+}
+
+label > p {
+  color: var(--very-darkblue);
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+label:hover {
+  color: var(--softred);
+  cursor: pointer;
+}
+
+li {
+  border-bottom: 1px solid var(--light-grayishblue);
+  padding: 10px 0;
+}
+
+.faq {
+  color: var(--very-darkblue);
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 1440px) {
+  .card {
+    min-height: 550px;
+    width: 65%;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .faq {
+    text-align: left;
+  }
+
+  .list-container {
+    margin-right: 8%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 50%;
+    width: 42%;
+    height: 100%;
+  }
+
+  .img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+  }
+
+  .img-cropper {
+    width: 500px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-img {
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    bottom: 0;
+    background: no-repeat center/100%
+        url('../images/illustration-woman-online-desktop.svg'),
+      no-repeat 100% -290px url('../images/bg-pattern-desktop.svg');
+  }
+
+  .bg-img:hover {
+    top: -5px;
+  }
+
+  .bg-box {
+    position: absolute;
+    transition: 0.4s all ease;
+    top: 230px;
+    left: -135px;
+    width: 195px;
+    height: 195px;
+    background: no-repeat center/100%
+      url('../images/illustration-box-desktop.svg');
+    animation: showimg 0.8s forwards;
+  }
+
+  .bg-box:hover {
+    top: 235px;
+  }
+
+  .img-container {
+    position: absolute;
+    left: 0;
+    width: 600px;
+    height: 100%;
+  }
+}
+
+input:checked ~ .content {
+  max-height: 100vh;
+}
+
+input:checked ~ label > p {
+  font-weight: 700;
+}
+
+input:checked ~ label .title:after {
+  transform: rotate(180deg);
+}
+
+@keyframes fademove {
+  0% {
+    background-color: transparent;
+    transform: translateX(-40px);
+  }
+  100% {
+    background-color: white;
+    transform: translateX(0);
+  }
+}
+
+@keyframes showimg {
+  0% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
